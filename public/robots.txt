@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://welberc1.github.io/CurriculoEmSite/sitemap.xml
