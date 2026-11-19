@@ -1,0 +1,204 @@
+.cases__explorer {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.8fr) minmax(0, 2fr);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(11, 7, 18, 0.72);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+}
+
+.cases__tabs {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem;
+  border-right: 1px solid var(--line);
+}
+
+.cases__tab {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 0.9rem;
+  border-radius: var(--radius);
+  color: var(--fg-subtle);
+  text-align: left;
+  font-size: 0.9375rem;
+  letter-spacing: -0.01em;
+  transition: color var(--dur-fast) var(--ease), background-color var(--dur) var(--ease);
+}
+
+.cases__tab:hover {
+  color: var(--fg);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.cases__tab[aria-selected='true'] {
+  color: var(--fg);
+  background: rgba(124, 58, 237, 0.14);
+}
+
+.cases__tab-glyph {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+
+.cases__tab[aria-selected='true'] .cases__tab-glyph {
+  color: var(--lav-bright);
+  border-color: var(--violet-line);
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
+}
+
+.cases__panel {
+  padding: clamp(1.5rem, 3.5vw, 3rem);
+  min-height: 30rem;
+}
+
+.cases__title {
+  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  animation: settle-in 700ms var(--ease) both;
+}
+
+.cases__path {
+  position: relative;
+  display: grid;
+  gap: 1.75rem;
+  margin-top: 2rem;
+  padding-left: 2rem;
+}
+
+/* The wire: a faint rail with a pulse of light travelling from problem to result. */
+.cases__path::before,
+.cases__path::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 0.55rem;
+  bottom: 0.55rem;
+  width: 1px;
+}
+
+.cases__path::before {
+  background: var(--line-strong);
+}
+
+.cases__path::after {
+  background: linear-gradient(to bottom, transparent, var(--lav-bright) 50%, transparent);
+  height: 5rem;
+  bottom: auto;
+  animation: pulse-down 2.6s var(--ease-io) 300ms infinite;
+  opacity: 0;
+}
+
+@keyframes pulse-down {
+  0% {
+    top: -2rem;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    top: calc(100% - 3rem);
+    opacity: 0;
+  }
+}
+
+.cases__step {
+  position: relative;
+  animation: settle-in 700ms var(--ease) both;
+}
+
+.cases__step::before {
+  content: '';
+  position: absolute;
+  left: calc(-2rem + 1px);
+  top: 0.3rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--fg-subtle);
+}
+
+.cases__step--result::before {
+  background: var(--lav-bright);
+  border-color: var(--lav-bright);
+  box-shadow: 0 0 0 4px rgba(167, 139, 250, 0.18);
+}
+
+.cases__label {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--lav);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.cases__step p {
+  color: var(--fg-muted);
+  max-width: 62ch;
+  line-height: 1.65;
+}
+
+.cases__step--result p {
+  color: var(--fg);
+  font-size: 1.0625rem;
+}
+
+.cases__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 2.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+  animation: settle-in 700ms var(--ease) 300ms both;
+}
+
+@keyframes settle-in {
+  from {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateY(8px);
+  }
+}
+
+@media (max-width: 899px) {
+  .cases__explorer {
+    grid-template-columns: 1fr;
+  }
+
+  .cases__tabs {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 0.25rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    scrollbar-width: none;
+    scroll-snap-type: x proximity;
+  }
+
+  .cases__tab {
+    flex: none;
+    scroll-snap-align: start;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+
+  .cases__panel {
+    min-height: 0;
+  }
+}

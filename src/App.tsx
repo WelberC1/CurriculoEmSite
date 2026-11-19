@@ -1,4 +1,5 @@
 import { About } from './components/About';
+import { Cases } from './components/Cases';
 import { Contact } from './components/Contact';
 import { Education } from './components/Education';
 import { Experience } from './components/Experience';
@@ -7,6 +8,7 @@ import { Hero } from './components/Hero';
 import { Nav } from './components/Nav';
 import { Projects } from './components/Projects';
 import { Skills } from './components/Skills';
+import { Field } from './components/Field';
 import { useReveal } from './hooks/useReveal';
 
 export default function App() {
@@ -18,11 +20,13 @@ export default function App() {
         Pular para o conteúdo
       </a>
 
+      <Field />
       <Nav />
 
       <main id="conteudo">
         <Hero />
         <About />
+        <Cases />
         <Projects />
         <Skills />
         <Experience />

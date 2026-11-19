@@ -5,7 +5,7 @@ export const profile = {
   firstName: 'Welber Caetano',
   lastName: 'Santos',
   role: 'Desenvolvedor de Software Pleno',
-  lead: 'Cerca de 3 anos desenvolvendo APIs REST, aplicações web e sistemas desktop. Especializado em .NET e C#, com Python, JavaScript, SQL e VBA no dia a dia, e forte atuação em integração entre sistemas e automação de processos.',
+  lead: 'Cerca de 3 anos de experiência em .NET e C#. Desenvolvo aplicações web, sistemas desktop, APIs REST e automações, além de integrações com APIs, arquivos e ERPs como SAP e Protheus.',
   email: 'welbercaetanos1@gmail.com',
   linkedin: 'https://www.linkedin.com/in/welber-caetano/',
   linkedinLabel: 'linkedin.com/in/welber-caetano',
@@ -21,10 +21,9 @@ export const heroFacts = [
 
 export const about = {
   paragraphs: [
-    'Sou Desenvolvedor de Software Pleno, especializado em .NET e C#, com cerca de 3 anos de experiência no desenvolvimento de APIs REST, aplicações web e sistemas desktop. No dia a dia também trabalho com Python, JavaScript, SQL e VBA.',
-    'Atuo no ciclo completo de desenvolvimento: do levantamento de requisitos e da modelagem de dados ao deploy automatizado via pipelines de CI/CD, com a infraestrutura hospedada em Azure.',
-    'Tenho forte atuação em integração entre sistemas, com experiência no consumo de APIs governamentais e bancárias e no desenvolvimento de sistemas de emissão de notas fiscais com suporte a múltiplos formatos de saída — JSON, XML, TXT e Excel — integrados a ERPs como SAP e Protheus.',
-    'Complemento essa atuação com automação de processos, usando Selenium em C# e Python, OCR com Azure Document Intelligence para extrair dados de documentos PDF e macros VBA em Excel, além da construção de relatórios e indicadores (KPIs) para apoio à tomada de decisão.',
+    'Desenvolvo sistemas de ponta a ponta: aplicações web em ASP.NET Core e Razor Pages, sistemas desktop em Windows Forms e Avalonia UI, APIs REST em .NET 8+ e automações de processos. No dia a dia trabalho com C#, Python, JavaScript, SQL e VBA.',
+    'Atuo no ciclo completo, do levantamento de requisitos e da modelagem de dados em SQL Server e PostgreSQL ao deploy automatizado por CI/CD no Azure DevOps, incluindo relatórios com KPIs para a gestão.',
+    'Também integro sistemas: consumo APIs governamentais e bancárias, gero arquivos em layout fechado (JSON, XML, TXT e Excel) que os clientes usam nos próprios ERPs, como SAP e Protheus, e automatizo rotinas com Selenium, OCR (Azure Document Intelligence) e macros VBA.',
   ],
 } as const;
 
@@ -55,8 +54,7 @@ export const cases: { icon: CaseIcon; title: string; problem: string; solution: 
   {
     icon: 'bank',
     title: 'Conciliação bancária',
-    problem:
-      'A conferência dos lançamentos bancários era realizada de maneira manual.',
+    problem: 'A conferência dos lançamentos bancários era feita à mão.',
     solution:
       'Desenvolvi a integração com as APIs dos bancos que baixa os lançamentos e concilia com a base automaticamente.',
     result: 'Uma ferramenta desenvolvida para apoiar a rotina do setor financeiro da empresa, facilitando a conciliação das transações.',
@@ -65,7 +63,7 @@ export const cases: { icon: CaseIcon; title: string; problem: string; solution: 
 
   {
     icon: 'file',
-    title: 'Sistema para Emissão de notas fiscais',
+    title: 'Arquivos para emissão de nota fiscal',
     problem:
       'Cada cliente precisava dos dados em um formato e um layout diferentes para emitir a nota fiscal no ERP dele.',
     solution:
@@ -95,23 +93,33 @@ export const cases: { icon: CaseIcon; title: string; problem: string; solution: 
   },
 ];
 
-export type WorkIcon = 'exchange' | 'database' | 'chart' | 'pipeline';
+export type WorkIcon = 'web' | 'desktop' | 'automation' | 'exchange' | 'database' | 'pipeline';
 
 export const workAreas: { icon: WorkIcon; title: string; text: string }[] = [
   {
+    icon: 'web',
+    title: 'Aplicações web',
+    text: 'Sistemas web em ASP.NET Core, Razor Pages e JavaScript, com APIs REST em .NET 8+ por trás.',
+  },
+  {
+    icon: 'desktop',
+    title: 'Sistemas desktop',
+    text: 'Aplicações em Windows Forms e Avalonia UI para a operação do dia a dia.',
+  },
+  {
+    icon: 'automation',
+    title: 'Automação de processos',
+    text: 'Robôs em Selenium (C# e Python), OCR com Azure Document Intelligence e macros VBA.',
+  },
+  {
     icon: 'exchange',
-    title: 'Integração entre sistemas',
-    text: 'Consumo de APIs governamentais e bancárias e troca de dados com ERPs de clientes, como SAP e Protheus.',
+    title: 'Integrações',
+    text: 'APIs governamentais e bancárias, troca de arquivos (JSON, XML, TXT, Excel) e ERPs como SAP e Protheus.',
   },
   {
     icon: 'database',
     title: 'Dados e persistência',
     text: 'Modelagem e otimização da camada de dados em SQL Server e PostgreSQL com Entity Framework.',
-  },
-  {
-    icon: 'chart',
-    title: 'Relatórios e KPIs',
-    text: 'Indicadores operacionais e financeiros usados como apoio à tomada de decisão pela gestão.',
   },
   {
     icon: 'pipeline',
@@ -258,14 +266,15 @@ export const experience = [
     period: '2024 — Atual',
     current: true,
     bullets: [
-      'APIs REST em .NET 8+ servindo dados operacionais para os sistemas internos e para clientes externos.',
+      'Desenvolvimento e manutenção de aplicações web em ASP.NET Core com Razor Pages e de APIs REST em .NET 8+ que servem dados aos sistemas internos e a clientes externos.',
+      'Aplicações desktop em Windows Forms e Avalonia UI para a operação da empresa.',
+      'Automação de processos com Selenium (C# e Python), OCR para extrair dados de PDFs e macros VBA em Excel.',
       'Integração com APIs externas governamentais e bancárias para automação de processos operacionais e financeiros.',
       'Conciliação bancária automatizada consumindo APIs de bancos, substituindo a conferência manual de lançamentos.',
       'Sistema que gera os arquivos em layout fechado — JSON, XML, TXT e Excel — usados pelos clientes para emitir nota fiscal em ERPs como SAP e Protheus.',
       'Relatórios com KPIs operacionais e financeiros usados como apoio à decisão pela gestão.',
       'Pipelines de CI/CD no Azure DevOps automatizando build e deploy, com infraestrutura em Azure.',
-      'Modelagem e otimização da persistência em SQL Server e PostgreSQL com Entity Framework, além da manutenção de aplicações web em ASP.NET Core com Razor Pages.',
-      'Automação de processos com Selenium (C# e Python), OCR para extrair dados de PDFs e macros VBA em Excel.',
+      'Modelagem e otimização da persistência em SQL Server e PostgreSQL com Entity Framework.',
     ],
   },
   {
@@ -311,9 +320,9 @@ export const certifications = [
 
 export const navSections = [
   { id: 'sobre', label: 'Sobre' },
+  { id: 'casos', label: 'Casos' },
   { id: 'projetos', label: 'Projetos' },
-  { id: 'skills', label: 'Skills' },
+  { id: 'skills', label: 'Stack' },
   { id: 'experiencia', label: 'Experiência' },
-  { id: 'formacao', label: 'Formação' },
   { id: 'contato', label: 'Contato' },
 ] as const;

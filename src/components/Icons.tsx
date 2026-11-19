@@ -161,17 +161,6 @@ function IconDatabase(props: IconProps) {
   );
 }
 
-function IconChart(props: IconProps) {
-  return (
-    <Svg {...props}>
-      <path {...s} d="M4.25 4.25v15.5h15.5" />
-      <path {...s} d="M8 16.25v-4" />
-      <path {...s} d="M12 16.25V7.75" />
-      <path {...s} d="M16 16.25v-6" />
-    </Svg>
-  );
-}
-
 function IconPipeline(props: IconProps) {
   return (
     <Svg {...props}>
@@ -318,9 +307,11 @@ function IconBriefcase(props: IconProps) {
 export { IconCap, IconBadge, IconBriefcase };
 
 const workIcons: Record<WorkIcon, (p: IconProps) => React.JSX.Element> = {
+  web: IconFrontend,
+  desktop: IconDesktop,
+  automation: IconAutomation,
   exchange: IconExchange,
   database: IconDatabase,
-  chart: IconChart,
   pipeline: IconPipeline,
 };
 

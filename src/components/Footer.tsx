@@ -32,7 +32,7 @@ export function Footer() {
           </li>
         </ul>
 
-        <p className="footer__colophon mono">
+        <p className="footer__colophon">
           Feito com React e Vite <span aria-hidden="true">·</span> hospedado no GitHub Pages
         </p>
       </div>
