@@ -15,13 +15,6 @@
   line-height: 0.95;
 }
 
-.contact__lead {
-  margin-top: 1.5rem;
-  max-width: 44ch;
-  color: var(--fg-muted);
-  font-size: clamp(1rem, 1.4vw, 1.1875rem);
-}
-
 .contact__actions {
   display: flex;
   flex-wrap: wrap;

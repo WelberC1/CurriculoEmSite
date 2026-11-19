@@ -36,9 +36,6 @@ export function Contact() {
         <h2 className="contact__title" data-reveal="hidden">
           Vamos conversar
         </h2>
-        <p className="contact__lead" data-reveal="hidden">
-          Se você tem uma vaga, um projeto ou só uma pergunta técnica, me manda uma mensagem. Respondo todas.
-        </p>
 
         <div className="contact__actions" data-reveal="hidden">
           <a className="btn btn--primary contact__mail" href={`mailto:${profile.email}`}>
